@@ -39,19 +39,14 @@ public class TestClass extends UnityPlayerActivity
     public int updateTexture() {
 
         checkGlError("begin_updateTexture()");
+        //create new texture
         nativeTexturePointer = createExternalTexture();
-        if(GLES20.glIsTexture(nativeTexturePointer)) {
-
-        }
-        else {
-            Log.e(LOG_TAG, nativeTexturePointer + " is not texture");
-        }
         Log.d(LOG_TAG, "Loading image");
 
         final Bitmap bitmap;
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;   // No pre-scaling
-        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888; //Unity will create texture in this format
 
 
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
@@ -72,21 +67,21 @@ public class TestClass extends UnityPlayerActivity
 
 
     }
-    public int updateTexture2() {
+    public void updateTexture2() {
         checkGlError("begin_updateTexture()");
 
         Log.d(LOG_TAG, "Loading image");
+        //Update the previous texture so need not to create
 
         final Bitmap bitmap;
         final BitmapFactory.Options options = new BitmapFactory.Options();
         options.inScaled = false;   // No pre-scaling
         options.inPreferredConfig = Bitmap.Config.ARGB_8888;
-
+        // Read in the resource
+        bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.test2, options);
 
         GLES20.glActiveTexture(GLES20.GL_TEXTURE0);
         checkGlError("activeTexture");
-        // Read in the resource
-        bitmap = BitmapFactory.decodeResource(mContext.getResources(), R.drawable.test2, options);
         // Bind to the texture in OpenGL
         GLES20.glBindTexture(GLES20.GL_TEXTURE_2D, nativeTexturePointer);
         checkGlError("bindTexture");
@@ -101,7 +96,6 @@ public class TestClass extends UnityPlayerActivity
 
         checkGlError("texImage");
         bitmap.recycle();
-        return nativeTexturePointer;
     }
 
 
