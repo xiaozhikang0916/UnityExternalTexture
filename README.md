@@ -3,6 +3,8 @@ Create and update texture in Android Java code, and show it in Unity3D scene.
 
 [中文README](https://github.com/xiaozhikang0916/UnityExternalTexture/blob/master/README_zh.md)
 
+[Download apk](https://github.com/xiaozhikang0916/UnityExternalTexture/releases/download/0.1/proj.apk)
+
 ##Environment
 My building environment:
 

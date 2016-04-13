@@ -1,6 +1,8 @@
 # UnityExternalTexture
 使用安卓原生代码生成、更新texture，并将其显示在Unity场景中。
 
+[下载APK](https://github.com/xiaozhikang0916/UnityExternalTexture/releases/download/0.1/proj.apk)
+
 ##使用环境
 我使用的环境：
 
