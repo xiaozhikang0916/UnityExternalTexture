@@ -97,7 +97,7 @@ public class PreviewTestNew : MonoBehaviour
             Debug.Log("Unity update texture");
             //Render a new image to the previous texture pointer
             //Need not to create a new texture
-            androidNativeCamActivity.Call<int>("updateTexture2");
+            androidNativeCamActivity.Call("updateTexture2");
         }
 
 
