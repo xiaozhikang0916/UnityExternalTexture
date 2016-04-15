@@ -20,6 +20,7 @@ public class PreviewTestNew : MonoBehaviour
     private bool pic1 = false;
     private bool pic2 = false;
 
+
     // Use this for initialization
     void Start()
     {
@@ -68,7 +69,7 @@ public class PreviewTestNew : MonoBehaviour
             //GL.InvalidateState();
 
             //Create texture with the pointer
-            Texture2D t = Texture2D.CreateExternalTexture(440, 220, TextureFormat.ARGB32, false, true, new IntPtr(pointer));
+            Texture2D t = Texture2D.CreateExternalTexture(440, 220, TextureFormat.YUY2, false, true, new IntPtr(pointer));
             Debug.Log("Create texture null : " + (t == null).ToString());
             androidNativeCamActivity.Call("checkGlError", "UnityCreateTexture");
             //tex.Apply();
@@ -89,6 +90,7 @@ public class PreviewTestNew : MonoBehaviour
             //Debug.Log("Write " + bytes.Length + " bytes");
             //img.Flush();
             //img.Close();
+            Debug.Log("Create finish");
         }
         if (pic2)
         {
@@ -98,6 +100,7 @@ public class PreviewTestNew : MonoBehaviour
             //Render a new image to the previous texture pointer
             //Need not to create a new texture
             androidNativeCamActivity.Call("updateTexture2");
+            Debug.Log("Update finish");
         }
 
 
