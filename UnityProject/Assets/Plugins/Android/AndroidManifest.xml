@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.xiaozhikang.test"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="16"
+        android:targetSdkVersion="23" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Microphone permissions -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name_plugin"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.xiaozhikang.test.TestClass" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!-- <activity android:name="com.unity3d.player.UnityPlayerActivity" -->
+        <!-- android:label="@string/app_name"> -->
+        <!-- </activity> -->
+        <!-- <activity android:name="com.unity3d.player.UnityPlayerNativeActivity" -->
+        <!-- android:label="@string/app_name"> -->
+        <!-- <meta-data android:name="android.app.lib_name" android:value="unity" /> -->
+        <!-- <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" /> -->
+        <!-- </activity> -->
+
+        <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+        <uses-feature
+            android:name="android.hardware.touchscreen"
+            android:required="false" />
+        <uses-feature
+            android:name="android.hardware.touchscreen.multitouch"
+            android:required="false" />
+        <uses-feature
+            android:name="android.hardware.touchscreen.multitouch.distinct"
+            android:required="false" />
+    </application>
+
+</manifest>
